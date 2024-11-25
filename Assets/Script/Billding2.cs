@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class billding : MonoBehaviour
+public class Billding2 : MonoBehaviour
 {
     public GameObject buildingPrefab;       // 建設する建物のPrefab
     private bool isConstructed = false;     // 建物が建設済みかどうか
+    private int Score = PlayerData.Instance.nScore;
 
     private void Update()
     {
-        // ↓scoreが内部的に無いため、Eキーで代用
-
-        // Eキーが押され、建物がまだ建設されていない場合
-        if (Input.GetKeyDown(KeyCode.E) && !isConstructed)
+        // scoreが一定に達した場合
+        if (PlayerData.Instance.nMoney > 2000 && !isConstructed)
         {
             ConstructBuilding();
         }
