@@ -9,13 +9,21 @@ public class Billding1 : MonoBehaviour
     private bool isConstructed = false;     // 建物が建設済みかどうか
     private int Score = PlayerData.Instance.nScore;
 
-    private void Update()
+    
+
+    void Start()
+    { 
+
+    }
+
+    void Update()
     {
         // scoreが一定に達した場合
         if (PlayerData.Instance.nMoney > 1000 && !isConstructed)
         {
             ConstructBuilding();
         }
+
     }
 
     private void ConstructBuilding()
@@ -25,10 +33,12 @@ public class Billding1 : MonoBehaviour
             // 現在の空き地の位置に建物を設置
             Instantiate(buildingPrefab, transform.position, Quaternion.identity);
 
+            Debug.Log("!!!!!");
             // 空き地のGameObjectを削除
             Destroy(gameObject);
 
             isConstructed = true;
         }
     }
+
 }
