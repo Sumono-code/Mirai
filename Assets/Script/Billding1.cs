@@ -9,7 +9,6 @@ public class Billding1 : MonoBehaviour
     private bool isConstructed = false;     // Œš•¨‚ªŒšİÏ‚İ‚©‚Ç‚¤‚©
     private int Score = PlayerData.Instance.nScore;
 
-    
 
     void Start()
     { 
