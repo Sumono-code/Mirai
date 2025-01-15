@@ -16,13 +16,15 @@ public class Buillding2 : MonoBehaviour
 
     void Update()
     {
-        // score‚ªˆê’è‚É’B‚µ‚½ê‡
-        if (PlayerData.Instance.nScore >= 2000)
+        if (PlayerData.Instance.bGameStart)
         {
-            TaiwanRamen.SetActive(true);
-            Kishimen.SetActive(true);
-            Raival2.SetActive(true);
+            // ƒŒƒxƒ‹‚R‚É’B‚µ‚½ê‡
+            if (PlayerData.Instance.nCurrentStage == 2)
+            {
+                TaiwanRamen.SetActive(true);
+                Kishimen.SetActive(true);
+                Raival2.SetActive(true);
+            }
         }
-
     }
 }

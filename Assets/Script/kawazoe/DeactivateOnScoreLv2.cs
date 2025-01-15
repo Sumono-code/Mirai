@@ -10,8 +10,8 @@ public class DeactivateOnScoreLv2 : MonoBehaviour
 
     void Update()
     {
-        // スコアが目標値に達したらオブジェクトを非アクティブ化する
-        if (PlayerData.Instance.nMoney >= 1000)
+        // レベル２に達した場合
+        if (PlayerData.Instance.nCurrentStage == 1)
         {
             gameObject.SetActive(false);
         }

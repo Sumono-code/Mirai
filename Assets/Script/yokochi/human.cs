@@ -42,10 +42,12 @@ public class human : MonoBehaviour
     public bool speedDown = false;
     float speedBuf = 1.0f;
 
+    Vector3 popPos;
+
     // 川添追加
     bool eat = false;
     // Humanオブジェクトに子として持たせるエフェクト
-    [SerializeField] private GameObject rivalSpecialEffect;     // 洗脳時のエフェクト
+    [SerializeField] public GameObject rivalSpecialEffect;     // 洗脳時のエフェクト
     private EffectManager effectManager;        // 看板交差時のエフェクト
 
 
@@ -74,6 +76,8 @@ public class human : MonoBehaviour
         child = transform.Find("favorite").gameObject;
 
         GetAllChildMr();        // 全ての子オブジェクトのマテリアルを取得して格納
+
+        popPos = this.gameObject.transform.position;
 
         // 川添追加
         effectManager = FindObjectOfType<EffectManager>();
@@ -229,7 +233,9 @@ public class human : MonoBehaviour
                 state = (int)human_state.eat;       // 食事状態に遷移
                 Destroy(child);
                 script.AddMoney(addMoneyVal);       // お金加算
-                script.AddScore(150);               // スコア加算
+
+                // 川添いじった
+                //script.AddScore(150);               // スコア加算
             }
             else if (other.gameObject.tag == "EnemyStore" && bCanStore == true)
             { // 敵の店当たったら
@@ -252,7 +258,10 @@ public class human : MonoBehaviour
         { // 洗脳状態かつ目的の味方の店に当たったら
             //Debug.Log("e store");
             script.AddMoney(addMoneyVal);       // お金加算
-            script.AddScore(150);               // スコア加算
+
+            // 川添いじった
+            //script.AddScore(150);               // スコア加算
+
             state = (int)human_state.eat;       // 食事状態に遷移
             Destroy(child);
         }
@@ -376,5 +385,6 @@ public class human : MonoBehaviour
 
         pos += transform.forward * speed * speedBuf;
         transform.position = pos;
+        transform.position = new Vector3(transform.position.x, popPos.y, transform.position.z);
     }
 }

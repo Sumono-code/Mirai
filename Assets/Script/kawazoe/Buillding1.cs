@@ -16,15 +16,15 @@ public class Buillding1 : MonoBehaviour
 
     void Update()
     {
-        // scoreが一定に達した場合
-        if (PlayerData.Instance.nScore >= 1000)
+        if (PlayerData.Instance.bGameStart)
         {
-            Hitsumabushi.SetActive(true);
-            Tebasaki.SetActive(true);
-            Raival1.SetActive(true);
-
-            //Debug.Log("建築します！");
+            // レベル２に達した場合
+            if (PlayerData.Instance.nCurrentStage == 1)
+            {
+                Hitsumabushi.SetActive(true);
+                Tebasaki.SetActive(true);
+                Raival1.SetActive(true);
+            }
         }
-
     }
 }

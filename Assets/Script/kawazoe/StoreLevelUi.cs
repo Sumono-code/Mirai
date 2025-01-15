@@ -20,12 +20,6 @@ public class StoreLevelUi : MonoBehaviour/*, IPointerEnterHandler, IPointerExitH
 
     void Start()
     {
-        //rectTransform = GetComponent<RectTransform>();
-
-        //// 初期位置とスケールを保存
-        //originalScale = rectTransform.localScale;
-        //originalPosition = rectTransform.localPosition;
-
         // レベル表示を更新
         UpdateLevelText();
     }
@@ -45,36 +39,6 @@ public class StoreLevelUi : MonoBehaviour/*, IPointerEnterHandler, IPointerExitH
             UpdateLevelText();
         }
     }
-
-    //// ホバー時に呼び出される
-    //public void OnPointerEnter(PointerEventData eventData)
-    //{
-    //    StopAllCoroutines(); // アニメーションをリセット
-    //    StartCoroutine(AnimateToState(originalScale * hoverScale, originalPosition + hoverPositionOffset));
-    //}
-
-    //// ホバー解除時に呼び出される
-    //public void OnPointerExit(PointerEventData eventData)
-    //{
-    //    StopAllCoroutines(); // アニメーションをリセット
-    //    StartCoroutine(AnimateToState(originalScale, originalPosition));
-    //}
-
-    //// アニメーション処理
-    //private IEnumerator AnimateToState(Vector3 targetScale, Vector3 targetPosition)
-    //{
-    //    while (Vector3.Distance(rectTransform.localScale, targetScale) > 0.01f ||
-    //           Vector3.Distance(rectTransform.localPosition, targetPosition) > 0.01f)
-    //    {
-    //        rectTransform.localScale = Vector3.Lerp(rectTransform.localScale, targetScale, Time.deltaTime * animationSpeed);
-    //        rectTransform.localPosition = Vector3.Lerp(rectTransform.localPosition, targetPosition, Time.deltaTime * animationSpeed);
-    //        yield return null;
-    //    }
-
-    //    // 最終位置とスケールを確定
-    //    rectTransform.localScale = targetScale;
-    //    rectTransform.localPosition = targetPosition;
-    //}
 
     // レベルテキストを更新
     private void UpdateLevelText()

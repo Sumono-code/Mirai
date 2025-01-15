@@ -24,6 +24,7 @@ public class syachiCollision : MonoBehaviour
             human humanCs = other.gameObject.GetComponent<human>();
             if (humanCs.GetState() == (int)human.human_state.brainwashing)
             {
+                humanCs.rivalSpecialEffect.SetActive(false);
                 humanCs.SetState((int)human.human_state.normal);
                 other.transform.eulerAngles = new Vector3(0, 90, 0);
                 // 洗脳状態移行時に入店可能フラグが変更ないなら特になし　あるなら入店フラグも変更
