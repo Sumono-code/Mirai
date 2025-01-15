@@ -702,11 +702,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4643978737631946560, guid: 06079cae3321da34ea2799523a5ba00b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4643978737631946563, guid: 06079cae3321da34ea2799523a5ba00b, type: 3}
       propertyPath: cooltime
-      value: 1100
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 4643978737631946589, guid: 06079cae3321da34ea2799523a5ba00b, type: 3}
       propertyPath: m_Enabled
@@ -2408,11 +2408,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4643978737631946560, guid: 06079cae3321da34ea2799523a5ba00b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4643978737631946563, guid: 06079cae3321da34ea2799523a5ba00b, type: 3}
       propertyPath: cooltime
-      value: 1200
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 4643978737631946591, guid: 06079cae3321da34ea2799523a5ba00b, type: 3}
       propertyPath: m_RootOrder
@@ -3889,7 +3889,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6977142835593128690, guid: 391368fa9a7413443b79dd27ba5c5a6b, type: 3}
       propertyPath: cooltime
-      value: 1000
+      value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 391368fa9a7413443b79dd27ba5c5a6b, type: 3}
@@ -5521,7 +5521,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288992195}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 53.7, y: 10, z: 10.200001}
+  m_LocalPosition: {x: -7.5, y: 10, z: 10.200001}
   m_LocalScale: {x: 1, y: 20, z: 40}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6346,7 +6346,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -50}
+  m_AnchoredPosition: {x: 378, y: -50}
   m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &324458409
@@ -22433,7 +22433,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 50}
+  m_AnchoredPosition: {x: 373, y: 50}
   m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1362463634
@@ -22758,7 +22758,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -150}
+  m_AnchoredPosition: {x: 382, y: -150}
   m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1376186959
@@ -31384,6 +31384,7 @@ MonoBehaviour:
   DancerNPC: {fileID: 8431325715962734354, guid: d15b1b20382bc2940bd09b0f06360121, type: 3}
   GodNPC: {fileID: 2987699961974171191, guid: 4d47fe8bcd8dae144a4a3f72c35cf40d, type: 3}
   Wall: {fileID: 288992195}
+  humans: []
 --- !u!4 &1865328942
 Transform:
   m_ObjectHideFlags: 0
@@ -35799,7 +35800,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6977142835593128690, guid: 391368fa9a7413443b79dd27ba5c5a6b, type: 3}
       propertyPath: cooltime
-      value: 1000
+      value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 391368fa9a7413443b79dd27ba5c5a6b, type: 3}

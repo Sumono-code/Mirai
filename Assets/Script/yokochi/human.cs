@@ -172,12 +172,12 @@ public class human : MonoBehaviour
                         if(addMoneyVal>=0)
                         {
                             ScoreText.GetComponent<Text>().text = "+" + addMoneyVal;
-                            //ScoreText.GetComponent<Text>().color= Color.green;
+                            ScoreText.GetComponent<Text>().color= Color.black;
                         }
                         else
                         {
                             ScoreText.GetComponent<Text>().text = "-" + addMoneyVal;
-                            //ScoreText.GetComponent<Text>().color = Color.red;
+                            ScoreText.GetComponent<Text>().color = Color.red;
                         }
                         Instantiate(canvas,pos,Quaternion.identity,transform);
                         //GameObject ScoreText = canvas.transform.GetChild(0).gameObject;
@@ -278,6 +278,9 @@ public class human : MonoBehaviour
             else if (other.gameObject.tag == "EnemyStore" && bCanStore == true)
             { // “G‚Ì“X“–‚½‚Á‚½‚ç
                 state = (int)human_state.eat;       // H–ó‘Ô‚É‘JˆÚ
+                addMoneyVal = (-addMoneyVal);
+                script.AddScore(addMoneyVal);      // ƒXƒRƒAŒ¸Z
+
                 Destroy(child);
             }
         }
@@ -286,6 +289,10 @@ public class human : MonoBehaviour
         { // ô”]ó‘Ô‚©‚Â–Ú“I‚Ì“G‚Ì“X‚É“–‚½‚Á‚½‚ç
             //Debug.Log("e store");
             state = (int)human_state.eat;       // H–ó‘Ô‚É‘JˆÚ
+
+            addMoneyVal = (-addMoneyVal);
+            script.AddScore(addMoneyVal);      // ƒXƒRƒAŒ¸Z
+
             Destroy(child);
 
             // ì“Y’Ç‰Á
@@ -299,6 +306,7 @@ public class human : MonoBehaviour
 
             // ì“Y‚¢‚¶‚Á‚½
             //script.AddScore(150);               // ƒXƒRƒA‰ÁZ
+
 
             state = (int)human_state.eat;       // H–ó‘Ô‚É‘JˆÚ
             Destroy(child);

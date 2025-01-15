@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 using System.Data;
+using UnityEngine.SceneManagement;
 
 public class ManageGUI : MonoBehaviour
 {
@@ -59,6 +60,12 @@ public class ManageGUI : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if ((Input.GetKeyDown(KeyCode.Return)))
+        {
+            SceneManager.LoadScene("Title");
+        }
+
+
         if (PlayerData.Instance.bGameStart)
         {
 
