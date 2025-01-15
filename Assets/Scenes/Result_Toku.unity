@@ -6440,6 +6440,9 @@ MonoBehaviour:
   SE00: {fileID: 8300000, guid: 7449389b08af9e648b6b47c28874ed02, type: 3}
   CurrentShowSE: {fileID: 8300000, guid: 00589caf5615d1743b8c42c71de447d6, type: 3}
   RollSE: {fileID: 8300000, guid: e03282a8f1cb4a945914defdaa0bbf1b, type: 3}
+  MoveSE: {fileID: 8300000, guid: 5068812899f51d6499ddc6c653171485, type: 3}
+  FirstBGM: {fileID: 8300000, guid: 0a5ab7c87fe00bc40a603706e18eaf4f, type: 3}
+  SecondBGM: {fileID: 8300000, guid: ef464096146107440bb30a6dd44dd28c, type: 3}
   CurrentImage: {fileID: 926661327}
   CurrentScoreText: {fileID: 965035116}
 --- !u!4 &324591164
@@ -6468,7 +6471,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

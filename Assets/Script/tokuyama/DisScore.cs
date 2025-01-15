@@ -18,9 +18,9 @@ public class DisScore : MonoBehaviour
         {
             // OriginColor.a -= 0.01f;
             Color color = gameObject.GetComponent<Text>().color;
-            color.a -= 0.01f;
+            color.a -= 0.02f;
             gameObject.GetComponent<Text>().color = color;
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 0.01f, this.transform.position.z);
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 0.05f, this.transform.position.z);
         }
     }
 }

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class human : MonoBehaviour
 {
@@ -52,7 +54,7 @@ public class human : MonoBehaviour
     //徳山
     private Vector3 HozonVec;
     public Canvas canvas;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -147,8 +149,27 @@ public class human : MonoBehaviour
                         SoundManager.Instance.PlaySound("gratitude");     // 川添　サウンド追加した
                         eat = true;
                         //徳山
-                        //Instantiate(canvas,this.transform.position,this.transform.rotation);
+                        Vector3 pos = new Vector3(transform.position.x, transform.position.y+8, transform.position.z);
+                        GameObject ScoreText = canvas.transform.GetChild(0).gameObject;
+                        ScoreText.GetComponent<Text>().text = "" + addMoneyVal;
+                        if(addMoneyVal>=0)
+                        {
+                            ScoreText.GetComponent<Text>().text = "+" + addMoneyVal;
+                            //ScoreText.GetComponent<Text>().color= Color.green;
+                        }
+                        else
+                        {
+                            ScoreText.GetComponent<Text>().text = "-" + addMoneyVal;
+                            //ScoreText.GetComponent<Text>().color = Color.red;
+                        }
+                        Instantiate(canvas,pos,Quaternion.identity,transform);
+                        //GameObject ScoreText = canvas.transform.GetChild(0).gameObject;
+                        //ScoreText.GetComponent<Text>().text = "" + addMoneyVal;
+                        //ScoreText.GetComponent<Text>().text = "" + addMoneyVal;
+
+                        //ここまで徳山
                     }
+                    
                     // ここまで
 
                     break;

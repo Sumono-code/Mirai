@@ -60,7 +60,7 @@ public class NextLevel : MonoBehaviour
        
         //Scoreに応じてステージレベルが変化する処理
 
-        if (PlayerData.Instance.nCurrentStage == 0 && PlayerData.Instance.nScore >= 200)       //元々は　Instance.nScore >= 1000
+        if (PlayerData.Instance.nCurrentStage == 0 && PlayerData.Instance.nScore >= 1000)       //元々は　Instance.nScore >= 1000
         {
             PlayerData.Instance.nCurrentStage = 1;
             PlayerData.Instance.bGameStart = false;

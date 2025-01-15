@@ -44,6 +44,9 @@ public class ResultSceneManage : MonoBehaviour
     public AudioClip SE00;
     public AudioClip CurrentShowSE;
     public AudioClip RollSE;
+    public AudioClip MoveSE;
+    public AudioClip FirstBGM;
+    public AudioClip SecondBGM;
     bool bUseDramRoll=false;
     //
     bool bShowMax=false;
@@ -57,6 +60,8 @@ public class ResultSceneManage : MonoBehaviour
     int DramRollCount = 0;
     //
     bool bShowCurrentScore=false;
+    //
+    bool bUseMoveSE = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -65,6 +70,8 @@ public class ResultSceneManage : MonoBehaviour
        // CurrentImage.SetActive(false);
         //‰¹Œn‚Ì‚à‚Ì
         audioSource = GetComponent<AudioSource>();
+        audioSource.clip=FirstBGM;
+        audioSource.Play();
     }
 
     // Update is called once per frame
@@ -91,6 +98,15 @@ public class ResultSceneManage : MonoBehaviour
         }
         else
         {
+            if(bUseMoveSE==false)
+            {
+                audioSource.Stop();
+                audioSource.PlayOneShot(MoveSE);
+                audioSource.clip = SecondBGM;
+                audioSource.Play();
+                bUseMoveSE = true;
+            }
+
             //‰ñ“]‚·‚é
             if(fEarthR<=270)
             {
@@ -141,6 +157,7 @@ public class ResultSceneManage : MonoBehaviour
                             {
                                 if(bUseDramRoll==false)
                                 {
+                                    audioSource.Stop();
                                     audioSource.PlayOneShot(RollSE);
                                     bUseDramRoll = true;
                                 }
@@ -169,7 +186,6 @@ public class ResultSceneManage : MonoBehaviour
                                 {
                                     CurrentImage.transform.position = new Vector3(CurrentImage.transform.position.x - 20.0f, CurrentImage.transform.position.y, 0);
                                 }
-                                
                             }
                         }
                         else

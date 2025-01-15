@@ -4903,7 +4903,7 @@ MonoBehaviour:
   speedUp: 0
   speedDown: 0
   rivalSpecialEffect: {fileID: 5646589142945021614}
-  canvas: {fileID: 0}
+  canvas: {fileID: 4909494000811181205, guid: 4092aee6e32f2fb4e9ea38a6ff7b7de8, type: 3}
 --- !u!23 &-8257523733243786203
 MeshRenderer:
   m_ObjectHideFlags: 0
