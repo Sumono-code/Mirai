@@ -28,18 +28,19 @@ public class MoneyUI : MonoBehaviour
         // 川添　大文字に変えた
         moneyText.text = "MONEY: " + PlayerData.Instance.nMoney;
 
-        //消えてく方のテキストMoney
-        if(PlayerData.Instance.nSumMoney>=0)
+        if (PlayerData.Instance.nSumMoney >= 0)
         {
             moneyText2.text = "+" + PlayerData.Instance.nSumMoney;
         }
         else
         {
-            moneyText2.text ="-"+(-PlayerData.Instance.nSumMoney);
+            moneyText2.text = "-" + (-PlayerData.Instance.nSumMoney);
         }
+        //消えてく方のテキストMoney
         
 
         //Fade--;
         moneyText2.color = new Color(0.0f, 0.0f, 0.0f,PlayerData.Instance.nCountFade);
+        //Debug.Log(moneyText2.color.a);
     }
 }

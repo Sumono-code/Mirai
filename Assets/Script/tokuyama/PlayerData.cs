@@ -59,8 +59,8 @@ public class PlayerData : MonoBehaviour
             }
 
             
-            //ŽžŠÔ‚ª—ˆ‚ÄResult‚Ì•\Ž¦
-            if (nTime >= 180)               //6ŽžŠÔŒã
+            //ŽžŠÔ‚ª—ˆ‚ÄResult‚ÌS•\Ž¦
+            if (nTime >= 200)               //6ŽžŠÔŒã
             {
                 bShowResult = true;
             }
