@@ -52,6 +52,7 @@ public class human : MonoBehaviour
     [SerializeField] public GameObject rivalSpecialEffect;     // 洗脳時のエフェクト
     private EffectManager effectManager;        // 看板交差時のエフェクト
 
+    NPCManager NPCManagerSc;
 
     //徳山
     private Vector3 HozonVec;
@@ -60,7 +61,7 @@ public class human : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        NPCManagerSc = GameObject.Find("ManageNPC").GetComponent<NPCManager>();
         ManageData = GameObject.Find("ManageData");
         script = ManageData.GetComponent<PlayerData>();
 
@@ -72,7 +73,16 @@ public class human : MonoBehaviour
         // 候補のなかから好物をランダムに設定
         if (StoreObjects.Length != 0)
         {
-            int num = Random.Range(0, StoreObjects.Length);
+            int num;
+            if(script.nCurrentStage != 0 && transform.position.x < 20)
+            {
+                num = Random.Range(2, StoreObjects.Length);
+            }
+            else
+            {
+                num = Random.Range(0, StoreObjects.Length);
+            }
+
             Store storeCs = StoreObjects[num].GetComponent<Store>();
             favorite = storeCs.GetFoodType();
         }
@@ -98,6 +108,7 @@ public class human : MonoBehaviour
             // とりあえずY座標が一定以下なら消す
             if (this.transform.position.y < -1.0f)
             {
+                NPCManagerSc.DestroyList(this.gameObject);
                 Destroy(this.gameObject);
             }
 
@@ -144,7 +155,9 @@ public class human : MonoBehaviour
                     }
 
                     mr.material.color = mr.material.color - new Color32(0, 0, 0, (byte)(mr.material.color.a + 5));  // 透明にしていく
+                    NPCManagerSc.DestroyList(this.gameObject);
                     Destroy(this.gameObject, DestroyTime);                                                           // 一定時間経ったら殺す
+
 
                     // 川添追加ここから
                     if (!eat)
@@ -401,7 +414,7 @@ public class human : MonoBehaviour
         }
         else if (speedUp == true && speedDown == true)
         {
-            speedBuf = speedDownDeBuf + speedUpBuf;
+            speedBuf = -speedDownDeBuf + speedUpBuf;
         }
         else
         {
