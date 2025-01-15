@@ -8,6 +8,8 @@ public class Buillding1 : MonoBehaviour
     public GameObject Hitsumabushi;
     public GameObject Tebasaki;
     public GameObject Raival1;
+    public GameObject HitsumabushiUi;
+    public GameObject TebasakiUi;
 
     void Start()
     {
@@ -24,6 +26,8 @@ public class Buillding1 : MonoBehaviour
                 Hitsumabushi.SetActive(true);
                 Tebasaki.SetActive(true);
                 Raival1.SetActive(true);
+                HitsumabushiUi.SetActive(true);
+                TebasakiUi.SetActive(true);
             }
         }
     }

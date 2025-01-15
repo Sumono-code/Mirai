@@ -8,6 +8,8 @@ public class Buillding2 : MonoBehaviour
     public GameObject TaiwanRamen;
     public GameObject Kishimen;
     public GameObject Raival2;
+    public GameObject TaiwanRamenUi;
+    public GameObject KishimenUi;
 
     void Start()
     {
@@ -24,6 +26,8 @@ public class Buillding2 : MonoBehaviour
                 TaiwanRamen.SetActive(true);
                 Kishimen.SetActive(true);
                 Raival2.SetActive(true);
+                TaiwanRamenUi.SetActive(true);
+                KishimenUi.SetActive(true);
             }
         }
     }
