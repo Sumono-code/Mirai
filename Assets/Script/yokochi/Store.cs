@@ -197,28 +197,27 @@ public class Store : MonoBehaviour
                 SkillLogSc.CreateSkillLog(storeName, SkillLogManager.SkillType.Special3);
                 state = StorState.cancellationSkill;
             }
-            else if (num >= cancellation && num < cancellation + (Per * (smallBrainwashingPer / 10)))
+            else if (num >= cancellation && num < cancellation + (Per * (smallBrainwashingPer / 100)))
             {
                 SkillLogSc.CreateSkillLog(storeName, SkillLogManager.SkillType.Special4);
                 state = StorState.SmallBrainwashingSkill;
                 SkillColli.SetActive(true);
             }
-            else if (num >= cancellation + (Per * (smallBrainwashingPer / 10)) && num < cancellation + (Per * (smallBrainwashingPer / 10)) + (Per * (brainwashingPer / 10)))
+            else if (num >= cancellation + (Per * (smallBrainwashingPer / 100)) && num < cancellation + (Per * (smallBrainwashingPer / 100)) + (Per * (brainwashingPer / 100)))
             {
                 state = StorState.BrainwashingSkill;
                 SkillLogSc.CreateSkillLog(storeName, SkillLogManager.SkillType.Special1);
             }
-            else if (num >= cancellation + (Per * (smallBrainwashingPer / 10)) + (Per * (brainwashingPer / 10)) && num < cancellation + (Per * (smallBrainwashingPer / 10)) + (Per * (brainwashingPer / 10)) + (Per * (addMoneyPer / 10)))
+            else if (num >= cancellation + (Per * (smallBrainwashingPer / 100)) + (Per * (brainwashingPer / 100)) && num < cancellation + (Per * (smallBrainwashingPer / 100)) + (Per * (brainwashingPer / 100)) + (Per * (addMoneyPer / 100)))
             {
                 SkillLogSc.CreateSkillLog(storeName, SkillLogManager.SkillType.Special5);
                 state = StorState.addMoney;
             }
-            else if (num >= cancellation + (Per * (smallBrainwashingPer / 10)) + (Per * (brainwashingPer / 10)) + (Per * (addMoneyPer / 10)) && num < 100)
+            else if (num >= cancellation + (Per * (smallBrainwashingPer / 100)) + (Per * (brainwashingPer / 100)) + (Per * (addMoneyPer / 100)) && num < 100)
             {
                 SkillLogSc.CreateSkillLog(storeName, SkillLogManager.SkillType.Special2);
                 state = StorState.EnemySkillDownTimeSkill;
             }
-            
         }
         else
         {
