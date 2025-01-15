@@ -75,30 +75,110 @@ public class NPCManager : MonoBehaviour
                 {
                     nCntInterval = 0;
                     int nRandom = Random.Range(0, 2);
-                    int nCharaRandom = Random.Range(0, 5);  //
+                    int nCharaRandom; 
                     GameObject Chara = GosuloliNPC; //–¢Š„‚è“–‚Ä‚É‚È‚é‚Ì‚Å‰Šú’l‚ÉƒSƒXƒƒŠ“ü‚ê‚Ä‚é‚¾‚¯
-                    switch (nCharaRandom)
+                    
+                    switch (PlayerData.Instance.nCurrentStage)
                     {
                         case 0:
-                            Chara = GosuloliNPC;
+                            nCharaRandom= Random.Range(0, 3);
+                            switch(nCharaRandom)
+                            {
+                                case 0:
+                                    Chara = GosuloliNPC;
+                                    break;
+                                case 1:
+                                    Chara = SalaryNPC;
+                                    break;
+                                case 2:
+                                    Chara = DancerNPC;
+                                    break;
+                            }
                             break;
                         case 1:
-                            Chara = KaigaiNPC;
+
+                           nCharaRandom = Random.Range(0, 10);
+                            if(nCharaRandom>=0 && nCharaRandom<=2)
+                            {
+                                nCharaRandom = 0;
+                            }
+                            else if (nCharaRandom >= 3 && nCharaRandom <= 5)
+                            {
+                                nCharaRandom = 1;
+                            }
+                            else if (nCharaRandom >= 5 && nCharaRandom <= 8)
+                            {
+                                nCharaRandom = 2;
+                            }
+                            else if (nCharaRandom ==9)
+                            {
+                                nCharaRandom = 3;
+                            }
+                            switch (nCharaRandom)
+                            {
+                                case 0:
+                                    Chara = GosuloliNPC;
+                                    break;
+                                case 1:
+                                    Chara = SalaryNPC;
+                                    break;
+                                case 2:
+                                    Chara = DancerNPC;
+                                    break;
+                                case 3:
+                                    Chara = KaigaiNPC;
+                                    break;
+                            }
+
                             break;
 
                         case 2:
-                            Chara = SalaryNPC;
+
+                            nCharaRandom = Random.Range(0, 100);
+                            if (nCharaRandom >= 0 && nCharaRandom <= 29)
+                            {
+                                nCharaRandom = 0;
+                            }
+                            else if (nCharaRandom >= 30 && nCharaRandom <= 59)
+                            {
+                                nCharaRandom = 1;
+                            }
+                            else if (nCharaRandom >= 60 && nCharaRandom <= 89)
+                            {
+                                nCharaRandom = 2;
+                            }
+                            else if (nCharaRandom >= 90 && nCharaRandom <= 96)
+                            {
+                                nCharaRandom = 4;
+                            }
+                            else if (nCharaRandom >= 97 && nCharaRandom <= 99)
+                            {
+                                nCharaRandom = 5;
+                            }
+                            switch (nCharaRandom)
+                            {
+                                case 0:
+                                    Chara = GosuloliNPC;
+                                    break;
+                                case 1:
+                                    Chara = SalaryNPC;
+                                    break;
+                                case 2:
+                                    Chara = DancerNPC;
+                                    break;
+                                case 3:
+                                    Chara = KaigaiNPC;
+                                    break;
+                                case 4:
+                                    Chara = GodNPC;
+                                    break;
+                            }
                             break;
 
-                        case 3:
-                            Chara = DancerNPC;
-                            break;
-
-                        case 4:
-                            Chara = GodNPC;
-                            break;
                     }
 
+
+                    //
                     if (nRandom == 0)
                     {
                         Instantiate(Chara, new Vector3(StartPos, -1, Random.Range(-3.0f, 13.0f)), Quaternion.Euler(0, 90, 0));

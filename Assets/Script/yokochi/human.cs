@@ -51,6 +51,8 @@ public class human : MonoBehaviour
 
     //徳山
     private Vector3 HozonVec;
+    public Canvas canvas;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -144,6 +146,8 @@ public class human : MonoBehaviour
                         SoundManager.Instance.PlaySound("GetMoney");     // 川添　サウンド追加した
                         SoundManager.Instance.PlaySound("gratitude");     // 川添　サウンド追加した
                         eat = true;
+                        //徳山
+                        //Instantiate(canvas,this.transform.position,this.transform.rotation);
                     }
                     // ここまで
 
@@ -352,7 +356,7 @@ public class human : MonoBehaviour
     {
         favorite= food;
         child.GetComponent<favorite>().SetFavoriteTex();
-
+        addMoneyVal = addMoneyVal * 3;
     }
 
     void Moveforward()
